@@ -14,7 +14,7 @@ public class Venta {
     public Venta(ArrayList<Producto> listaProducto, Cliente cliente) {
         this.listaProducto = listaProducto;
         this.cliente = cliente;
-        this.nroFact = cantVentas++;
+        this.nroFact = Venta.cantVentas++;
         this.fecha = LocalDate.now();
     }
 
@@ -60,9 +60,9 @@ public class Venta {
     
     
     public void agregarProducto(Producto p){
-        nroFact++;
+     //   nroFact++;
         this.listaProducto.add(p);
-        cantVentas++;
+    //    cantVentas++;
         
         
        
