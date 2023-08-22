@@ -3,10 +3,12 @@ package miTienda;
 
 public class Pantalon extends Producto{
     private String talle;
+    // TALLE ES DE TIPO INT
 
     public Pantalon(String talle, String desc, double precio) {
         super(desc, precio);
         this.talle = talle;
+        // FALTA  MODELO
     }
     
     @Override
@@ -17,6 +19,7 @@ public class Pantalon extends Producto{
     
     @Override
     public double getPrecio() {
+        // COMPARAR CON MODELO
         if (this.talle.equalsIgnoreCase("Oxford")) {
             this.precio = this.precio + (this.precio * 0.15);
         }
