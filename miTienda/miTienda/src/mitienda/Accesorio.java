@@ -1,38 +1,43 @@
 package miTienda;
 
-
-public class Accesorio extends Producto{
+public class Accesorio extends Producto {
     private double peso;
-    private String metal;
+    private tipoAccesorio tipo;
 
-    public Accesorio(double peso, String metal, String desc, double precio) {
+    public Accesorio(double peso, tipoAccesorio tipo, String desc, double precio) {
         super(desc, precio);
         this.peso = peso;
-        this.metal = metal;
+        this.tipo = tipo;
     }
-    
+
     @Override
     public String toString() {
-  
-       return super.toString() + (" Gramos: ") + this.peso + (" Metal: ") + this.metal ;
+        return super.toString() + " Tipo: " + tipo.getDescripcion() + ", Peso: " + peso;
     }
     
-    @Override
+   @Override
     public double getPrecio() {
-        if (this.metal.equals("Oro")){
-            this.precio = this.peso * 17000;
-        }
-        if (this.metal.equals("Plata")){
-            this.precio = this.peso * 448;
-        }
-        if (this.metal.equals("Acero")){
-            this.precio = this.peso * 2000;
-        }
-        return precio;
+        double importe = 0;
+    // Calcular el precio según el tipo de accesorio
+        switch (tipo) {
+            case COLLAR:
+                importe = peso * 17000; // Precio para Collar
+                break;
+            case ANILLO:
+                importe = peso * 448; // Precio para Anillo
+                break;
+            case ARITO:
+                importe = peso * 2000; // Precio para Arito
+                break;
     }
+    
+    return importe;
+}
 
     public void setPrecio(double precio) {
         this.precio = precio;
     }
     
+
+
 }

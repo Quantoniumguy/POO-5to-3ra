@@ -46,7 +46,7 @@ public class Main {
                 Metal = scanner.next();
                 System.out.println("Cuantos gramos pesa?: ");
                 Peso = scanner.nextDouble();
-                Producto c = new Accesorio(Peso, Metal, descripcion, 6000);
+                Producto c = new Accesorio(Peso, tipoAccesorio.valueOf(Accesorio.toUpperCase()), descripcion, 6000);
                 listaProducto.add(c);
             }
             // Lógica similar para Pantalon y Accesorio
