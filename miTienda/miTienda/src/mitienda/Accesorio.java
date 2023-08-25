@@ -1,6 +1,6 @@
 package miTienda;
 
-public class Accesorio extends Producto {
+public class Accesorio extends Producto implements Importable {
     private double peso;
     private tipoAccesorio tipo;
 
@@ -14,6 +14,7 @@ public class Accesorio extends Producto {
     public String toString() {
         return super.toString() + " Tipo: " + tipo.getDescripcion() + ", Peso: " + peso;
     }
+    
     
    @Override
     public double getPrecio() {
@@ -34,6 +35,21 @@ public class Accesorio extends Producto {
     return importe;
 }
 
+    @Override
+    public double calcularArancelAduanero() {
+        double precioSinIva = precio; // Suponiendo IVA del 21%
+         System.out.println(precioSinIva);
+        return precioSinIva * 0.10; // 10% sobre el precio sin IVA
+    }
+    
+    @Override
+    public double calcularArancelTransporte() {
+        double precioSinIva = precio; // Suponiendo IVA del 21%
+        System.out.println(precioSinIva);
+        return precioSinIva * 0.02; // 2% sobre el precio sin IVA
+    }
+    
+    
     public void setPrecio(double precio) {
         this.precio = precio;
     }
