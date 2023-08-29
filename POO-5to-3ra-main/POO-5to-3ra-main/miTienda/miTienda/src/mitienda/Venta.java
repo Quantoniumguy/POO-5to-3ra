@@ -5,12 +5,13 @@ import java.util.ArrayList;
 
 
 public class Venta {
+    // instanciar el ArrayList
     private ArrayList<Producto> listaProducto;
     private Cliente cliente;
     private static int cantVentas = 1090;
     private int nroFact;
     private LocalDate fecha;
-
+// eliminar el array en el constructor. Debería recibir una fecha y un cliente
     public Venta(ArrayList<Producto> listaProducto, Cliente cliente) {
         this.listaProducto = listaProducto;
         this.cliente = cliente;
@@ -79,6 +80,7 @@ public class Venta {
     }
     
     public void imprimirFactura() {
+        // agregar NOmbre del Cliente
     System.out.println("Factura N°: " + nroFact + " - " + fecha);
     for (Producto p : listaProducto) {
         System.out.println(p.toString());
