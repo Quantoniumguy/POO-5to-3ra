@@ -9,20 +9,23 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         ArrayList<Venta> caja = new ArrayList<>();
         String talle;
-        String Accesorio;
-        String Metal;
-        Double Peso;
+        // **** defino las variables de la clase Padre que son comunes a todas las hijas y las inicializo ****
+        String Accesorio=""; // las variables se definene en minúsucla
+        String Metal="";
+        double Peso=0.0;
+        //**********************
+        char continuar='';
+        Cliente cliente=null; 
+        //falta crear una venta vta
         
-        char continuar;
-        Cliente cliente; 
         do {
-            // Solicitar datos del cliente y productos
+            // Solicitar datos del cliente 
             System.out.println("Ingrese el nombre del cliente:");
             String nombreCliente = scanner.nextLine();
              cliente = new Cliente(nombreCliente);
             
             // Crear una lista para almacenar los productos de la venta actual
-            ArrayList<Producto> listaProducto = new ArrayList<>();
+            ArrayList<Producto> listaProducto = new ArrayList<>(); // Este array está demás, pues la venta ya tiene un ArrayList
             
             System.out.println("Que producto quiere? (Remera, Pantalon, Accesorio)");
             String descripcion = scanner.nextLine();
@@ -31,7 +34,8 @@ public class Main {
                 System.out.println("Que talle?: S, M, L, X");
                 talle = scanner.next();
                 Producto r = new Remera(talle.charAt(0), descripcion, 3000); 
-                listaProducto.add(r);
+                //vta.agregarProducto(r);
+                listaProducto.add(r); // quitar
             }
             if(descripcion.equals("Pantalon")){
             System.out.println("Que pantalon?: Skinny, Oxford, Recto");
