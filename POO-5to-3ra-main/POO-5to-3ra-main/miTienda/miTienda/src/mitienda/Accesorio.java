@@ -12,6 +12,7 @@ public class Accesorio extends Producto implements Importable {
 
     @Override
     public String toString() {
+        // tipo.getDescripcion()  está demás
         return super.toString() + " Tipo: " + tipo.getDescripcion() + ", Peso: " + peso;
     }
     
@@ -19,6 +20,7 @@ public class Accesorio extends Producto implements Importable {
    @Override
     public double getPrecio() {
         double importe = 0;
+        // estos métodos deberías invocarlos una vez calculado el importe total
         double arancelAduanero = calcularArancelAduanero();
         double arancelTransporte = calcularArancelTransporte();
     // Calcular el precio según el tipo de accesorio
